@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+group = 'hansung.arcade'
+version = '0.1.0'
+
+java {
+    // 팀 공통 JDK. IntelliJ·Eclipse 모두 이 값을 읽어 같은 버전으로 컴파일한다.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+application {
+    mainClass = 'HansungArcadeApplication'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+// ./gradlew run 에서 Scanner(System.in) 입력을 받을 수 있게 연결
+tasks.named('run') {
+    standardInput = System.in
+}

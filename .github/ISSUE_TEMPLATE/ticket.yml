@@ -1,0 +1,62 @@
+name: 티켓
+description: 기능, 버그, 리팩터링, 설정 등 모든 작업
+title: "[tag] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        제목은 `[tag] 제목` 형식으로 적어 주세요. tag별로 쓰는 커밋 깃모지는 README의 컨벤션을 참고하세요.
+
+        | tag | 용도 |
+        | --- | --- |
+        | `feat` | 새 기능 · 화면 |
+        | `fix` | 버그 수정 |
+        | `refactor` | 동작은 그대로 두고 구조 개선 |
+        | `test` | 테스트 추가 · 수정 |
+        | `docs` | 문서 |
+        | `style` | 포맷 · 코드 스타일 |
+        | `chore` | 빌드 · CI · 설정 |
+
+        예) `[feat] 대기실 화면 구현`, `[fix] 물풍선이 블럭을 통과함`
+
+  - type: dropdown
+    id: part
+    attributes:
+      label: 파트
+      options:
+        - 인게임 (맵 · 캐릭터 · 물풍선 · 아이템)
+        - 아웃게임 (로그인 · 로비 · 대기실 · 결과)
+        - 공통 기반 (화면 전환 · 리소스 · 입력)
+        - 서버 · 네트워크
+        - 빌드 · CI · 문서
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 내용
+      description: 무엇을 왜 하는지 적어 주세요. 버그라면 재현 방법과 기대 동작도 함께 적어 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 작업 목록
+      value: |
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 조건
+      description: 어떤 상태가 되면 이 티켓을 닫을 수 있나요?
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 참고
+      description: 스크린샷, 에러 로그, 관련 티켓, 링크 등
